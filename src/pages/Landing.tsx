@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Users, ShieldCheck, Clock, FileText, BarChart3, Zap } from "lucide-react";
+import { ArrowRight, Users, ShieldCheck, Clock, FileText, BarChart3, Zap, Shield, Building2, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
@@ -41,16 +41,26 @@ const Landing = () => {
             Complete employee onboarding, attendance tracking, and HR management platform 
             with role-based access for admins, HR teams, and employees.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/auth/register">
-              <Button variant="gradient" size="xl" className="w-full sm:w-auto">
-                Start Free Trial
-                <ArrowRight className="w-5 h-5" />
+          <div className="grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            <Link to="/auth/admin">
+              <Button variant="gradient" size="xl" className="w-full flex flex-col h-auto py-6">
+                <Shield className="w-8 h-8 mb-2" />
+                <span className="text-lg font-semibold">Admin Dashboard</span>
+                <span className="text-sm opacity-90">Full system control</span>
               </Button>
             </Link>
-            <Link to="/demo">
-              <Button variant="outline" size="xl" className="w-full sm:w-auto">
-                View Demo
+            <Link to="/auth/hr">
+              <Button variant="outline" size="xl" className="w-full flex flex-col h-auto py-6">
+                <Building2 className="w-8 h-8 mb-2" />
+                <span className="text-lg font-semibold">HR Dashboard</span>
+                <span className="text-sm opacity-75">Employee management</span>
+              </Button>
+            </Link>
+            <Link to="/auth/employee">
+              <Button variant="secondary" size="xl" className="w-full flex flex-col h-auto py-6">
+                <UserCheck className="w-8 h-8 mb-2" />
+                <span className="text-lg font-semibold">Employee Portal</span>
+                <span className="text-sm opacity-75">Self-service access</span>
               </Button>
             </Link>
           </div>
